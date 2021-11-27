@@ -1,0 +1,223 @@
+// Variables
+$bg-dark: #010912;
+$title-color-answers: #6aa7f8;
+$title-color-questions: #ff7a00;
+$main-btn-color: #3cb86c;
+$category-what: #3c84b8;
+$category-why: #b83c52;
+$category-how: #b87f3c;
+$color-grey: #949494;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "DM Mono", monospace;
+}
+body {
+  background-color: $bg-dark;
+  padding: 15px;
+  color: white;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 40px;
+}
+h2 {
+  font-weight: 400;
+  font-size: 19px;
+  color: $color-grey;
+}
+h3 {
+  font-weight: 500;
+  font-size: 16px;
+  color: $color-grey;
+  text-transform: uppercase;
+}
+p {
+  font-size: 18px;
+  font-weight: 300;
+}
+span {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $color-grey;
+}
+button {
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  border-radius: 2px;
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+  border: 2px solid $main-btn-color;
+  cursor: pointer;
+  outline: none;
+
+  &.main-btn {
+    background-color: $main-btn-color;
+    transition: 0.4s all linear;
+    &:hover {
+      background-color: transparent;
+    }
+    &:active {
+      background-color: $main-btn-color;
+    }
+  }
+  &.scnd-btn {
+    background-color: transparent;
+    transition: 0.4s all linear;
+    &:hover {
+      background-color: $main-btn-color;
+    }
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.modal-open {
+  overflow: hidden;
+}
+.Modal {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: #14171a;
+  width: 100%;
+  outline: none;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 9, 18, 0.7);
+}
+
+// Custom classes
+.title-span {
+  font-weight: 500;
+  font-size: 40px;
+
+  &.answer {
+    color: $title-color-answers;
+  }
+  &.question {
+    color: $title-color-questions;
+  }
+}
+
+// Title between Answers and questions
+.followed-by {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+// Underline below the Question
+
+.what-btn {
+  border: 2px solid $category-what;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $category-what;
+  }
+}
+.why-btn {
+  // background-color: $category-why;
+  border: 2px solid $category-why;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $category-why;
+  }
+}
+.how-btn {
+  // background-color: $category-how;
+  border: 2px solid $category-how;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $category-how;
+  }
+}
+#line {
+  width: 100%;
+  height: 2px;
+  &.what {
+    background-color: $category-what;
+  }
+  &.why {
+    background-color: $category-why;
+  }
+  &.how {
+    background-color: $category-how;
+  }
+}
+
+// Tabs for changing the questions category
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .category {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.4s all linear;
+  }
+}
+
+// Previous and next button
+.prev-next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .change {
+    height: 35px;
+    padding: 0px 14px 0px 6px;
+    background-color: #0f1011;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    &.next {
+      padding: 0px 6px 0px 14px;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
