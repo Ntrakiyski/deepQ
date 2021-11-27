@@ -17,6 +17,9 @@ $color-grey: #949494;
 html,
 body {
   font-family: "DM Mono", monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body {
   background-color: $bg-dark;
@@ -31,7 +34,15 @@ h1 {
 h2 {
   font-weight: 400;
   font-size: 19px;
-  color: $color-grey;
+  &.what {
+    color: $category-what;
+  }
+  &.why {
+    color: $category-why;
+  }
+  &.how {
+    color: $category-how;
+  }
 }
 h3 {
   font-weight: 500;
@@ -43,7 +54,8 @@ p {
   font-size: 18px;
   font-weight: 300;
 }
-span {
+span,
+.all-types {
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
@@ -60,6 +72,7 @@ button {
   border: 2px solid $main-btn-color;
   cursor: pointer;
   outline: none;
+  font-family: "DM Mono", monospace;
 
   &.main-btn {
     background-color: $main-btn-color;
@@ -102,6 +115,7 @@ a {
   background-color: #14171a;
   width: 100%;
   outline: none;
+  max-width: 600px;
 }
 
 .Overlay {
@@ -219,5 +233,41 @@ a {
         transform: rotate(180deg);
       }
     }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    background-color: #0e1111;
+  }
+  h1 {
+    font-size: 52px;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 20px;
+  }
+  span {
+    font-size: 12px;
+  }
+  button {
+    font-size: 18px;
+  }
+
+  // Custom classes
+  .title-span {
+    font-size: 40px;
+  }
+  .followed-by {
+    font-size: 22px;
+  }
+  .category {
+    font-size: 18px;
   }
 }

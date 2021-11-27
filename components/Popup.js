@@ -86,7 +86,7 @@ const Styles = styled.div`
   }
   .flex {
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 50px 0 5px 0;
   }
   input {
@@ -94,6 +94,7 @@ const Styles = styled.div`
     transform: scale(1.5);
     outline: none;
     border: none;
+    cursor: pointer;
 
     :checked {
       border: 1px solid #3c84b8;
@@ -105,6 +106,7 @@ const Styles = styled.div`
     font-size: 14px;
     font-weight: 300;
     font-style: italic;
+    max-width: 400px;
   }
   .error-field {
     font-size: 12px;
