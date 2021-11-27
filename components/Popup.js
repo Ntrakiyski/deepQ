@@ -2,14 +2,12 @@ import React from "react";
 
 import styled from "styled-components";
 
-function SubmitQuestion(e) {
-  e.preventDefault();
-}
+function SubmitQuestion(e) {}
 
 export const Popup = () => {
   const [showErrorText, setErrorText] = React.useState(false);
   const [showErrorInput, setErrorInput] = React.useState(false);
-  const [storeText, setStoredText] = React.useState("");
+  const [storeText, setStoredText] = React.useState();
 
   function getValueFromTextArea(e) {
     if (e.target.value !== "") {
@@ -19,48 +17,58 @@ export const Popup = () => {
       setErrorText(true);
     }
   }
+
+  const submitTextArea = async () => {
+    // await fetch("/api/questions", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     question: storeText,
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+  };
   return (
     <Styles>
-      <form action="submit" onSubmit={SubmitQuestion}>
-        <div className="textarea-section">
-          <h3>ask a questions</h3>
-          <textarea
-            onChange={getValueFromTextArea}
-            required
-            name="enterQuestion"
-            id="newQuestion"
-            cols="30"
-            rows="10"
-            placeholder="Ask a question or briefly describe what answers you are looking for"
-          ></textarea>
-          {showErrorText && (
-            <div className="error-field textArea">
-              In order to answer please ask the question.
-            </div>
-          )}
-        </div>
-        <div className="flex">
-          <input
-            type="checkbox"
-            name="Checkbox"
-            id="checkbox"
-            required
-            value="accepted"
-            onClick={(e) => setErrorInput(!e.target.checked)}
-          />
-          <label>
-            My desire is to only ask questions which will help others and me 🙏
-          </label>
-        </div>
-        {showErrorInput && (
-          <div className="error-field input">
-            Please agree with the single rule.
+      <div className="textarea-section">
+        <h3>ask a questions</h3>
+        <textarea
+          onChange={getValueFromTextArea}
+          required
+          name="enterQuestion"
+          id="newQuestion"
+          cols="30"
+          rows="10"
+          placeholder="Ask a question or briefly describe what answers you are looking for"
+        ></textarea>
+        {showErrorText && (
+          <div className="error-field textArea">
+            In order to answer please ask the question.
           </div>
         )}
-        <button className="scnd-btn" onClick={SubmitQuestion}>
-          Send
-        </button>
-      </form>
+      </div>
+      <div className="flex">
+        <input
+          type="checkbox"
+          name="Checkbox"
+          id="checkbox"
+          required
+          value="accepted"
+          onClick={(e) => setErrorInput(!e.target.checked)}
+        />
+        <label>
+          My desire is to only ask questions which will help others and me 🙏
+        </label>
+      </div>
+      {showErrorInput && (
+        <div className="error-field input">
+          Please agree with the single rule.
+        </div>
+      )}
+      <button className="scnd-btn" onClick={submitTextArea}>
+        Send
+      </button>
     </Styles>
   );
 };

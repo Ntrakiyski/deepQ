@@ -174,7 +174,7 @@ export default function Home({ posts }) {
         <div>loading...</div>
       )}
 
-      <AskQuestion setIsOpen={setIsOpen} />
+      {/* <AskQuestion setIsOpen={setIsOpen} /> */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
