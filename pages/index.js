@@ -165,7 +165,7 @@ export default function Home({ posts }) {
                 className={filterData[currentNumber].category}
               ></div>
             </motion.div>
-            <motion.p variants={item2} initial="hidden" animate="show">
+            <motion.p variants={item2} animate="show" initial="hidden">
               {filterData[currentNumber].answer}
             </motion.p>
           </motion.div>
